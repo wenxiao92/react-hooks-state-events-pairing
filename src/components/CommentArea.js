@@ -14,13 +14,16 @@ const displayComments = comments.map((eachComment)=>(
 
 const [toggleComment, setToggle] = useState(false)
 const hideUnhideComment = (toggleComment ? "" : `${comments.length} Comments`)
-let hiding
+
+//handles the displaying of the whole div that controls the comments and the objects
+let hiding = toggleComment ? {display:"none"} : {display:"block"}
 
 
 
 function handleClick(){
+    
     setToggle((toggleComment) => !toggleComment)
-    hiding = toggleComment ? {display:"block"} : {display:"none"}
+    
 }
 
 return(
